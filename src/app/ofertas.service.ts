@@ -15,6 +15,12 @@ export class OfertasService {
         .then((resposta: any) => resposta.json())
     }
 
+    public getOfertasPorCategoria(categoria:string): Promise<Oferta[]> {
+        return this.http.get(`http://localhost:3000/ofertas?categoria=${categoria}`)
+        .toPromise()
+        .then((resposta: any) => resposta.json())
+    }
+
     // public getOfertas2(): Promise<Oferta[]> {
     //     return new Promise((resolve, reject) => {
     //         let deu_certo = true
