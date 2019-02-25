@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
+import localePt from '@angular/common/locales/pt';
+
 import { HttpModule } from '@angular/http'
 import { RouterModule } from '@angular/router'
 
@@ -14,8 +16,10 @@ import { DiversaoComponent } from './diversao/diversao.component';
 import { OfertaComponent } from './oferta/oferta.component';
 import { ComoUsarComponent } from './oferta/como-usar/como-usar.component';
 import { OndeFicaComponent } from './oferta/onde-fica/onde-fica.component';
+import { registerLocaleData } from '@angular/common';
 
 // forRoot (mapeamento de rotas globais para a aplicacao) forChild (rotas internas)
+registerLocaleData(localePt, 'pt-Br')
 
 @NgModule({
   declarations: [
@@ -34,7 +38,7 @@ import { OndeFicaComponent } from './oferta/onde-fica/onde-fica.component';
     HttpModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [],
+  providers: [ {provide: LOCALE_ID, useValue: 'pt-Br'}  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
