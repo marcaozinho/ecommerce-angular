@@ -14,7 +14,6 @@ import 'rxjs/add/operator/switchMap'
 export class TopoComponent implements OnInit {
 
   public ofertas: Observable<Oferta[]>
-  public ofertasArray: Oferta[]
   private subjectPesquisa: Subject<string> = new Subject<string>()
 
   constructor(private ofertasService: OfertasService) { }
@@ -39,10 +38,10 @@ export class TopoComponent implements OnInit {
         return Observable.of<Oferta[]>([])
       })
       
-    //nao tem problema o subscribe ficar aqui, uma vez que está em watch
-    this.ofertas.subscribe((ofertas: Oferta[]) => { 
-                            this.ofertasArray = ofertas 
-                          }) 
+    //nao tem problema o subscribe ficar aqui, uma vez que está em watch ---- antigo mecanismo de busca
+    // this.ofertas.subscribe((ofertas: Oferta[]) => { 
+    //                         this.ofertasArray = ofertas 
+    //                       }) 
 
     // let tempo = Observable.interval(2000)
     // tempo.subscribe((intervalo:number) => { console.log (intervalo) } )
@@ -81,6 +80,10 @@ export class TopoComponent implements OnInit {
   public pesquisa(termoDaBusca: string): void  {
     console.log('Keyup:', termoDaBusca)
     this.subjectPesquisa.next(termoDaBusca)
+  }
+
+  public limpaPesquisa(): void  {
+    this.subjectPesquisa.next('')
   }
 
 }

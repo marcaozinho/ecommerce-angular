@@ -18,6 +18,9 @@ import { ComoUsarComponent } from './oferta/como-usar/como-usar.component';
 import { OndeFicaComponent } from './oferta/onde-fica/onde-fica.component';
 import { registerLocaleData } from '@angular/common';
 
+import { DescricaoReduzida } from './util/descricao-reduzida.pipe';
+import { OrdemCompraComponent } from './ordem-compra/ordem-compra.component'
+
 // forRoot (mapeamento de rotas globais para a aplicacao) forChild (rotas internas)
 registerLocaleData(localePt, 'pt-Br')
 
@@ -31,7 +34,9 @@ registerLocaleData(localePt, 'pt-Br')
     DiversaoComponent,
     OfertaComponent,
     ComoUsarComponent,
-    OndeFicaComponent
+    OndeFicaComponent,
+    DescricaoReduzida,
+    OrdemCompraComponent
   ],
   imports: [
     BrowserModule,
