@@ -15,23 +15,14 @@ export class HomeComponent implements OnInit {
   constructor(private ofertasService: OfertasService) { }
 
   ngOnInit() {
-    // Sincrona
-    // this.ofertas = this.ofertasService.getOfertas()
-    // console.log(this.ofertas)
-
-    // Assincrona
-    // this.ofertasService.getOfertas2()
-    //   .then(
-    //     (ofertas: Oferta[]) => {this.ofertas = ofertas},
-    //     (param: any) => console.log(param))
-
+    //this.ofertas = this.ofertasService.getOfertas()
+    //console.log(this.ofertas)
 
     this.ofertasService.getOfertas()
-      .then((ofertas: Oferta[]) => {
-        this.ofertas = ofertas
+      .then(( ofertas: Oferta[] ) => { 
+        this.ofertas = ofertas 
       })
-      .catch((param: any) => {
-        console.log(param)
+      .catch(( param: any ) => { 
       })
   }
 

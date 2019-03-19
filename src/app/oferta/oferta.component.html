@@ -1,16 +1,17 @@
 <div class="container">
   <div class="oferta" *ngIf="oferta !== undefined">
+    <!--
     <div class="row">
       <div class="col">
         <a [routerLink]="['/oferta', 1]">Oferta 1</a>
-        <a [routerLink]="['/oferta', 2]">Oferta 2</a>
         <a [routerLink]="['/oferta', 3]">Oferta 3</a>
+        <a [routerLink]="['/oferta', 6]">Oferta 6</a>
       </div>
     </div>
-
+    -->
     <div class="row">
       <div class="col">
-        <h4> {{ oferta.descricao_oferta }}</h4>
+        <h4>{{ oferta.descricao_oferta }}</h4>
       </div>
     </div>
 
@@ -35,7 +36,7 @@
 
         <div class="row">
           <div class="col text-center">
-            <h1>R$ {{ oferta.valor | currency:'BRL':true }}</h1>
+            <h1>{{ oferta.valor | currency:'BRL':symbol }}</h1>
           </div>
         </div>
 
@@ -50,22 +51,20 @@
     </div>
 
   </div>
-  <div class="row" style="margin-top: 25px; margin-bottom: 200px;">
+  
+  <div class="row" style="margin-bottom: 25px; margin-bottom: 150px">
     <div class="col">
       <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item">
-          <a class="nav-link active" data-toggle="tab" routerLink="como-usar" role="tab" aria-selected="true">Como usar</a>
+          <a class="nav-link active" routerLink="como-usar" data-toggle="tab" role="tab" aria-expanded="true">Como usar</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-toggle="tab" routerLink="onde-fica" role="tab" aria-selected="false">Onde fica?</a>
+          <a class="nav-link" routerLink="onde-fica" data-toggle="tab" role="tab">Onde fica?</a>
         </li>
       </ul>
-      <div class="tab-content" id="myTabContent">
-        <!-- <div class="tab-pane fade show active" id="como-usar" role="tabpanel">Texto como usar</div>
-        <div class="tab-pane fade" id="onde-fica" role="tabpanel">Texto onde fica</div> -->
+      <div class="tab-content">
         <router-outlet></router-outlet>
       </div>
     </div>
   </div>
-  
 </div>

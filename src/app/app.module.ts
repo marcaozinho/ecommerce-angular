@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
-import localePt from '@angular/common/locales/pt';
-
+import {registerLocaleData} from '@angular/common';
+import br from '@angular/common/locales/br';
 import { HttpModule } from '@angular/http'
 import { RouterModule } from '@angular/router'
 
@@ -16,13 +16,12 @@ import { DiversaoComponent } from './diversao/diversao.component';
 import { OfertaComponent } from './oferta/oferta.component';
 import { ComoUsarComponent } from './oferta/como-usar/como-usar.component';
 import { OndeFicaComponent } from './oferta/onde-fica/onde-fica.component';
-import { registerLocaleData } from '@angular/common';
 
+//pipe
 import { DescricaoReduzida } from './util/descricao-reduzida.pipe';
-import { OrdemCompraComponent } from './ordem-compra/ordem-compra.component'
+import { OrdemCompraComponent } from './ordem-compra/ordem-compra.component';
 
-// forRoot (mapeamento de rotas globais para a aplicacao) forChild (rotas internas)
-registerLocaleData(localePt, 'pt-Br')
+registerLocaleData(br, 'pt-BR');
 
 @NgModule({
   declarations: [
@@ -43,7 +42,7 @@ registerLocaleData(localePt, 'pt-Br')
     HttpModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [ {provide: LOCALE_ID, useValue: 'pt-Br'}  ],
+  providers: [ { provide: LOCALE_ID, useValue: 'pt-Br' } ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
