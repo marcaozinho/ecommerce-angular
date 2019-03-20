@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
-import {registerLocaleData} from '@angular/common';
-import br from '@angular/common/locales/br';
 import { HttpModule } from '@angular/http'
 import { RouterModule } from '@angular/router'
+import {registerLocaleData} from '@angular/common';
+import br from '@angular/common/locales/br';
 
 import { ROUTES } from './app.routes'
 
