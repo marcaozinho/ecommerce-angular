@@ -2,10 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { HttpModule } from '@angular/http'
 import { RouterModule } from '@angular/router'
-import { FormsModule } from '@angular/forms'
-
-import {registerLocaleData} from '@angular/common';
-import br from '@angular/common/locales/br';
+//import { FormsModule } from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms'
 
 import { ROUTES } from './app.routes'
 
@@ -23,8 +21,6 @@ import { OndeFicaComponent } from './oferta/onde-fica/onde-fica.component';
 import { DescricaoReduzida } from './util/descricao-reduzida.pipe';
 import { OrdemCompraComponent } from './ordem-compra/ordem-compra.component';
 import { OrdemCompraSucessoComponent } from './ordem-compra-sucesso/ordem-compra-sucesso.component';
-
-registerLocaleData(br, 'pt-BR');
 
 @NgModule({
   declarations: [
@@ -44,7 +40,8 @@ registerLocaleData(br, 'pt-BR');
   imports: [
     BrowserModule,
     HttpModule,
-    FormsModule,
+    //FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(ROUTES)
   ],
   providers: [ { provide: LOCALE_ID, useValue: 'pt-Br' } ],
