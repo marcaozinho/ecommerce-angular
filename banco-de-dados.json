@@ -199,6 +199,20 @@
       "complemento": "123",
       "formaPagamento": "dinheiro",
       "id": 2
+    },
+    {
+      "endereco": "weqw",
+      "numero": "ewqeqwe",
+      "complemento": "qwewqe",
+      "formaPagamento": "debito",
+      "id": 3
+    },
+    {
+      "endereco": "1212da",
+      "numero": "dsadas",
+      "complemento": "dsadsa",
+      "formaPagamento": "dinheiro",
+      "id": 4
     }
   ]
 }
