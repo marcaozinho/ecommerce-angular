@@ -9,7 +9,7 @@ import { Oferta } from '../shared/oferta.model'
   selector: 'app-oferta',
   templateUrl: './oferta.component.html',
   styleUrls: ['./oferta.component.css'],
-  providers: [ OfertasService, CarrinhoService ]
+  providers: [ OfertasService ]
 })
 export class OfertaComponent implements OnInit, OnDestroy {
 
@@ -22,9 +22,6 @@ export class OfertaComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
-
-    console.log('Oferta - Array de itens do carrinho: ', this.carrinhoService.exibirItens())
-
     this.route.params.subscribe((parametros: Params) => {
 
       this.ofertasService.getOfertaPorId(parametros.id)
@@ -34,12 +31,14 @@ export class OfertaComponent implements OnInit, OnDestroy {
       })  
       
     })
-
-      
   }
   
-
   ngOnDestroy() {
+  }
+
+  public adicionarItemCarrinho(oferta: Oferta): void {
+    this.carrinhoService.incluirItem(this.oferta)
+    console.log(this.carrinhoService.exibirItens())
   }
   
 
